@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contacto HYC | Diseño, construcción, ingeniería y topografía</title>
+
+  <meta name="description" content="Contacta a HYC Diseño & Construcción para servicios de topografía, ingeniería, arquitectura, diseño residencial, supervisión, presupuestos y gestión técnica de proyectos." />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ================================
+       CONTACTO HYC
+    ================================ */
+
+    .contact-hero {
+      position: relative;
+      min-height: 88vh;
+      background: #10161b;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .contact-hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .contact-hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(0.9);
+    }
+
+    .contact-hero-shade {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background:
+        linear-gradient(90deg, rgba(8, 12, 18, 0.92) 0%, rgba(8, 12, 18, 0.72) 48%, rgba(8, 12, 18, 0.28) 100%),
+        linear-gradient(0deg, rgba(8, 12, 18, 0.86) 0%, transparent 58%);
+    }
+
+    .contact-hero-inner {
+      position: relative;
+      z-index: 3;
+      padding: 180px 0 95px;
+      color: #fff;
+      margin-left: 7vw;
+      width: min(100% - 42px, 1180px);
+    }
+
+    .contact-hero-inner h1 {
+      max-width: 820px;
+      font-size: clamp(42px, 6vw, 78px);
+      line-height: 1;
+      letter-spacing: -2.5px;
+      margin-bottom: 22px;
+    }
+
+    .contact-hero-inner p {
+      max-width: 680px;
+      font-size: 18px;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    /* BLOQUE CONTACTO */
+    .contact-main {
+      padding: 110px 0;
+      background:
+        radial-gradient(circle at top left, rgba(185, 138, 69, 0.14), transparent 32%),
+        linear-gradient(135deg, #f4efe6, #ffffff);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .contact-info-panel {
+      padding: 36px;
+      border-radius: 36px;
+      background: #111722;
+      color: #fff;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.18);
+    }
+
+    .contact-info-panel h2 {
+      font-size: clamp(30px, 3.4vw, 46px);
+      line-height: 1.05;
+      letter-spacing: -1.4px;
+      margin-bottom: 18px;
+    }
+
+    .contact-info-panel p {
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    .contact-methods {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-method {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding: 17px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.075);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      text-decoration: none;
+      color: #fff;
+      transition: 0.25s ease;
+    }
+
+    .contact-method:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(215, 184, 121, 0.38);
+    }
+
+    .contact-method img {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #fff;
+      padding: 6px;
+    }
+
+    .contact-method strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+
+    .contact-method span {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 14px;
+    }
+
+    .contact-social-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .contact-social-row a {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      transition: 0.25s ease;
+    }
+
+    .contact-social-row a:hover {
+      transform: translateY(-3px);
+      background: #d7b879;
+    }
+
+    .contact-social-row img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    /* FORMULARIO */
+    .contact-form-panel {
+      padding: 36px;
+      border-radius: 36px;
+      background: #fff;
+      border: 1px solid rgba(17, 23, 34, 0.10);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-form-panel h2 {
+      font-size: clamp(30px, 3.8vw, 50px);
+      line-height: 1.04;
+      letter-spacing: -1.6px;
+      color: #111722;
+      margin-bottom: 14px;
+    }
+
+    .contact-form-panel > p {
+      color: #6b7280;
+      line-height: 1.65;
+      margin-bottom: 30px;
+      max-width: 720px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field label {
+      font-size: 13px;
+      font-weight: 900;
+      color: #111722;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(17, 23, 34, 0.14);
+      background: #f7f4ee;
+      color: #111722;
+      border-radius: 18px;
+      padding: 15px 16px;
+      font-size: 15px;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .field textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: #b98a45;
+      box-shadow: 0 0 0 4px rgba(185, 138, 69, 0.13);
+      background: #fff;
+    }
+
+    .contact-form-note {
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .contact-submit-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-top: 6px;
+    }
+
+    .contact-whatsapp-btn {
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    /* TARJETAS DE SERVICIO */
+    .contact-service-band {
+      padding: 105px 0;
+      background:
+        radial-gradient(circle at top right, rgba(185, 138, 69, 0.15), transparent 30%),
+        linear-gradient(135deg, #10161b, #1a2328);
+      color: #fff;
+    }
+
+    .contact-service-head {
+      max-width: 840px;
+      margin-bottom: 44px;
+    }
+
+    .contact-service-head h2 {
+      font-size: clamp(34px, 4.8vw, 62px);
+      line-height: 1.02;
+      letter-spacing: -2px;
+      color: #fff;
+    }
+
+    .contact-service-head p {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 17px;
+      line-height: 1.65;
+      margin-top: 14px;
+    }
+
+    .contact-service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .contact-service-card {
+      padding: 26px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.075);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      transition: 0.25s ease;
+    }
+
+    .contact-service-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(215, 184, 121, 0.38);
+    }
+
+    .contact-service-card span {
+      color: #d7b879;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .contact-service-card h3 {
+      font-size: 21px;
+      color: #fff;
+      margin: 10px 0;
+      line-height: 1.15;
+    }
+
+    .contact-service-card p {
+      color: rgba(255, 255, 255, 0.70);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    /* CIERRE */
+    .contact-final {
+      padding: 90px 0;
+      background: #f4efe6;
+    }
+
+    .contact-final-box {
+      padding: 46px;
+      border-radius: 38px;
+      background: #fff;
+      border: 1px solid rgba(17, 23, 34, 0.10);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-final-box h2 {
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -1.6px;
+      color: #111722;
+    }
+
+    .contact-final-box p {
+      color: #6b7280;
+      margin-top: 12px;
+      font-size: 17px;
+      max-width: 720px;
+    }
+
+    @media (max-width: 1050px) {
+      .contact-grid,
+      .contact-final-box {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .contact-hero-inner {
+        padding: 150px 0 70px;
+        margin-left: 24px;
+      }
+
+      .contact-hero-inner h1 {
+        font-size: 40px;
+        letter-spacing: -1.2px;
+      }
+
+      .contact-actions,
+      .contact-submit-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .contact-main,
+      .contact-service-band,
+      .contact-final {
+        padding: 78px 0;
+      }
+
+      .form-row,
+      .contact-service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info-panel,
+      .contact-form-panel,
+      .contact-final-box {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="nav-wrap">
+
+      <a href="index.html" class="brand-logo identity-brand">
+        <img src="imagenes/logo-hyc.png" alt="HYC Diseño y Construcción">
+        <span class="brand-name">
+          <strong>HYC</strong>
+          <small>Diseño & Construcción</small>
+        </span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+      <label for="menu-toggle" class="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="topografia.html">Topografía</a>
+        <a href="ingenieria.html">Ingeniería</a>
+        <a href="arquitectura.html">Arquitectura</a>
+        <a href="contacto.html" class="active">Contacto</a>
+      </nav>
+
+      <div class="nav-social">
+        <a href="https://www.facebook.com/profile.php?id=61572391505468" target="_blank" aria-label="Facebook HYC">
+          <img src="imagenes/facebook.png" alt="Facebook">
+        </a>
+
+        <a href="#" target="_blank" aria-label="Instagram HYC">
+          <img src="imagenes/instagram.png" alt="Instagram">
+        </a>
+
+        <a href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" aria-label="WhatsApp HYC">
+          <img src="imagenes/whatsapp.png" alt="WhatsApp">
+        </a>
+      </div>
+
+      <a class="nav-quote" href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20cotizar%20un%20proyecto" target="_blank">
+        Cotizar
+      </a>
+
+    </div>
+  </header>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a class="whatsapp-float" href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" aria-label="Escribir por WhatsApp">
+    <img src="imagenes/whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <main>
+
+    <!-- CONTACTO PRINCIPAL -->
+    <section class="contact-main">
+      <div class="container contact-grid">
+
+        <!-- INFO -->
+        <aside class="contact-info-panel">
+          <p class="section-tag">Hablemos</p>
+
+          <h2>Atención directa para orientar tu proyecto.</h2>
+
+          <p>
+            Podés escribirnos por WhatsApp o correo. Para una mejor respuesta, indicá el tipo de servicio,
+            ubicación general, tamaño aproximado y etapa en la que se encuentra el proyecto.
+          </p>
+
+          <div class="contact-methods">
+
+            <a class="contact-method" href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank">
+              <img src="imagenes/whatsapp.png" alt="WhatsApp">
+              <div>
+                <strong>WhatsApp</strong>
+                <span>3368-5015</span>
+              </div>
+            </a>
+
+            <a class="contact-method" href="mailto:hycconstrucciones@yahoo.com">
+              <img src="imagenes/logo-hyc.png" alt="Correo HYC">
+              <div>
+                <strong>Correo</strong>
+                <span>hycconstrucciones@yahoo.com</span>
+              </div>
+            </a>
+
+            <a class="contact-method" href="index.html">
+              <img src="imagenes/logo-hyc.png" alt="HYC">
+              <div>
+                <strong>Servicios</strong>
+                <span>Topografía · Ingeniería · Arquitectura</span>
+              </div>
+            </a>
+
+          </div>
+
+          <div class="contact-social-row">
+            <a href="https://www.facebook.com/profile.php?id=61572391505468" target="_blank" aria-label="Facebook HYC">
+              <img src="imagenes/facebook.png" alt="Facebook">
+            </a>
+
+           <a href="https://www.instagram.com/hycconstrucciones2026/" target="_blank" aria-label="Instagram HYC">
+    <img src="imagenes/instagram.png" alt="Instagram">
+  </a>
+
+            <a href="https://wa.me/50433685015" target="_blank" aria-label="WhatsApp HYC">
+              <img src="imagenes/whatsapp.png" alt="WhatsApp">
+            </a>
+          </div>
+        </aside>
+
+        <!-- FORMULARIO -->
+        <section class="contact-form-panel">
+          <p class="section-tag">Cotización rápida</p>
+
+          <h2>Enviar datos por WhatsApp.</h2>
+
+          <p>
+            Este formulario no guarda información en la página. Solo prepara un mensaje para enviarlo
+            directamente por WhatsApp a HYC.
+          </p>
+
+          <form class="contact-form" id="contactForm">
+
+            <div class="form-row">
+              <div class="field">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" placeholder="Tu nombre">
+              </div>
+
+              <div class="field">
+                <label for="telefono">Teléfono</label>
+                <input type="text" id="telefono" placeholder="Tu número de contacto">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="servicio">Servicio</label>
+                <select id="servicio">
+                  <option value="Topografía">Topografía</option>
+                  <option value="Ingeniería y gestión técnica">Ingeniería y gestión técnica</option>
+                  <option value="Arquitectura y diseño">Arquitectura y diseño</option>
+                  <option value="Modelo de casa HYC">Modelo de casa HYC</option>
+                  <option value="Supervisión de obra">Supervisión de obra</option>
+                  <option value="Presupuesto / estimación">Presupuesto / estimación</option>
+                  <option value="Otro servicio">Otro servicio</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="ubicacion">Ubicación general</label>
+                <input type="text" id="ubicacion" placeholder="Ciudad, zona o colonia">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="mensaje">Descripción breve</label>
+              <textarea id="mensaje" placeholder="Ejemplo: necesito levantar un terreno, diseñar una casa, cotizar una supervisión, calcular volúmenes, etc."></textarea>
+            </div>
+
+            <p class="contact-form-note">
+              Al presionar el botón se abrirá WhatsApp con el mensaje listo para enviar.
+            </p>
+
+            <div class="contact-submit-row">
+              <button type="submit" class="btn-main contact-whatsapp-btn">
+                Preparar mensaje en WhatsApp
+              </button>
+
+              <a class="btn-ghost dark-line" href="mailto:hycconstrucciones@yahoo.com">
+                Escribir por correo
+              </a>
+            </div>
+
+          </form>
+        </section>
+
+      </div>
+    </section>
+
+    
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-clean-grid">
+
+      <div>
+        <img class="footer-logo" src="imagenes/logo-hyc.png" alt="HYC Diseño y Construcción">
+        <p>
+          Topografía, ingeniería, diseño arquitectónico y gestión técnica para proyectos
+          residenciales, comerciales, urbanos y civiles.
+        </p>
+      </div>
+
+      <div>
+        <h4>Menú</h4>
+        <a href="index.html">Inicio</a>
+        <a href="topografia.html">Topografía</a>
+        <a href="ingenieria.html">Ingeniería</a>
+        <a href="arquitectura.html">Arquitectura</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+
+      <div>
+        <h4>Contacto</h4>
+        <a href="https://wa.me/50433685015" target="_blank">WhatsApp: 3368-5015</a>
+        <a href="mailto:hycconstrucciones@yahoo.com">hycconstrucciones@yahoo.com</a>
+
+     <div class="footer-social">
+  <a href="https://www.facebook.com/profile.php?id=61572391505468" target="_blank" aria-label="Facebook HYC">
+    <img src="imagenes/facebook.png" alt="Facebook">
+  </a>
+
+  <a href="https://www.instagram.com/hycconstrucciones2026/" target="_blank" aria-label="Instagram HYC">
+    <img src="imagenes/instagram.png" alt="Instagram">
+  </a>
+
+  <a href="https://wa.me/50433685015" target="_blank" aria-label="WhatsApp HYC">
+    <img src="imagenes/whatsapp.png" alt="WhatsApp">
+  </a>
+</div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom-clean">
+      <p>© 2026 HYC Diseño & Construcción. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById("nombre").value.trim();
+      const telefono = document.getElementById("telefono").value.trim();
+      const servicio = document.getElementById("servicio").value;
+      const ubicacion = document.getElementById("ubicacion").value.trim();
+      const mensaje = document.getElementById("mensaje").value.trim();
+
+      const texto = `Hola HYC, quiero información sobre un proyecto.%0A%0A` +
+        `Nombre: ${nombre || "No indicado"}%0A` +
+        `Teléfono: ${telefono || "No indicado"}%0A` +
+        `Servicio: ${servicio}%0A` +
+        `Ubicación general: ${ubicacion || "No indicada"}%0A%0A` +
+        `Descripción:%0A${mensaje || "Deseo recibir orientación para mi proyecto."}`;
+
+      const url = `https://wa.me/50433685015?text=${texto}`;
+
+      window.open(url, "_blank");
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Topografía HYC | Levantamientos, replanteo y control topográfico</title>
+
+  <meta name="description" content="Servicios de topografía HYC: levantamientos topográficos, replanteo, georreferenciación, curvas de nivel, cálculo de áreas, volúmenes y control topográfico en obra." />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Ajustes propios para que esta página quede más limpia */
+    .compact-services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .compact-services-grid span {
+      padding: 15px 20px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(17, 23, 34, 0.12);
+      color: #151a24;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.06);
+    }
+
+    .topo-pro-gallery {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr 0.85fr;
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .topo-pro-card {
+      position: relative;
+      min-height: 520px;
+      border-radius: 34px;
+      overflow: hidden;
+      background: #111;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.16);
+    }
+
+    .topo-pro-card:first-child {
+      min-height: 620px;
+    }
+
+    .topo-pro-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .topo-pro-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.70), transparent 58%);
+    }
+
+    .topo-pro-card div {
+      position: absolute;
+      z-index: 2;
+      left: 26px;
+      right: 26px;
+      bottom: 26px;
+      color: #fff;
+    }
+
+    .topo-pro-card span {
+      color: #d7b879;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .topo-pro-card h3 {
+      font-size: 26px;
+      line-height: 1.1;
+      margin-top: 8px;
+    }
+
+    .topo-simple-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .topo-simple-strip div {
+      padding: 26px;
+      border-radius: 28px;
+      background: #f4efe6;
+      border: 1px solid rgba(17, 23, 34, 0.12);
+    }
+
+    .topo-simple-strip span {
+      color: #b98a45;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .topo-simple-strip h3 {
+      margin: 8px 0;
+      font-size: 22px;
+    }
+
+    .topo-simple-strip p {
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    @media (max-width: 1050px) {
+      .topo-pro-gallery,
+      .topo-simple-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .topo-pro-card,
+      .topo-pro-card:first-child {
+        min-height: 430px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="nav-wrap">
+
+      <a href="index.html" class="brand-logo identity-brand">
+        <img src="imagenes/logo-hyc.png" alt="HYC Diseño y Construcción">
+        <span class="brand-name">
+          <strong>HYC</strong>
+          <small>Diseño & Construcción</small>
+        </span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+      <label for="menu-toggle" class="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="topografia.html" class="active">Topografía</a>
+        <a href="ingenieria.html">Ingeniería</a>
+        <a href="arquitectura.html">Arquitectura</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <div class="nav-social">
+        <a href="https://www.facebook.com/profile.php?id=61572391505468" target="_blank" aria-label="Facebook HYC">
+          <img src="imagenes/facebook.png" alt="Facebook">
+        </a>
+
+        <a href="https://www.instagram.com/hycconstrucciones2026/" target="_blank" aria-label="Instagram HYC">
+  <img src="imagenes/instagram.png" alt="Instagram">
+</a>
+
+        <a href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20informaci%C3%B3n%20sobre%20topograf%C3%ADa" target="_blank" aria-label="WhatsApp HYC">
+          <img src="imagenes/whatsapp.png" alt="WhatsApp">
+        </a>
+      </div>
+
+      <a class="nav-quote" href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20cotizar%20un%20trabajo%20de%20topograf%C3%ADa" target="_blank">
+        Cotizar
+      </a>
+
+    </div>
+  </header>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a class="whatsapp-float" href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20cotizar%20un%20trabajo%20de%20topograf%C3%ADa" target="_blank" aria-label="Escribir por WhatsApp">
+    <img src="imagenes/whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <main>
+
+    <!-- HERO TOPOGRAFÍA -->
+    <section class="page-hero-topo">
+
+      <div class="page-hero-media">
+        <img src="imagenes/robotica-2.jpeg" alt="Topografía profesional HYC">
+      </div>
+
+      <div class="page-hero-shade"></div>
+
+      <div class="container page-hero-inner">
+        <p class="page-kicker">Topografía HYC</p>
+
+        <h1>Información topográfica para diseñar, construir y controlar con precisión</h1>
+
+        <div class="page-actions">
+          <a class="btn-main" href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20cotizar%20un%20trabajo%20de%20topograf%C3%ADa" target="_blank">
+            Cotizar topografía
+          </a>
+
+          <a class="btn-ghost" href="#servicios-topografia">
+            Ver servicios
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+   
+
+    <!-- SERVICIOS COMPACTOS -->
+    <section class="topo-services-section" id="servicios-topografia">
+      <div class="container">
+
+        <div class="section-head topo-section-head">
+          <p class="section-tag">Servicios de topografía</p>
+          <h2>Información técnica para terrenos, obras y urbanizaciones.</h2>
+          <p>
+            Servicios adaptados al tipo de proyecto y al entregable que el cliente necesita.
+          </p>
+        </div>
+
+        <div class="compact-services-grid">
+          <span>Levantamientos topográficos</span>
+          <span>Planimetría y altimetría</span>
+          <span>Georreferenciación</span>
+          <span>Replanteo de obras</span>
+          <span>Cálculo de áreas</span>
+          <span>Cálculo de volúmenes</span>
+          <span>Modelos digitales de terreno</span>
+          <span>Topografía con dron</span>
+          <span>Urbanizaciones</span>
+          <span>Control topográfico en obra</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIDEO Y EQUIPO -->
+    <section class="topo-video-section">
+      <div class="container video-split">
+
+        <div class="video-copy">
+          <p class="section-tag">Trabajo en campo</p>
+          <h2>Equipo y experiencia para distintos tipos de terreno.</h2>
+          <p>
+            Apoyamos proyectos en campo abierto, obras en ejecución, plataformas,
+            estructuras, áreas rurales y zonas urbanas.
+          </p>
+
+          <a class="btn-main dark" href="https://wa.me/50499394345?text=Hola%20HYC,%20quiero%20informaci%C3%B3n%20sobre%20topograf%C3%ADa" target="_blank">
+            Solicitar información
+          </a>
+        </div>
+
+        <div class="video-mosaic">
+
+          <div class="video-frame large-video">
+            <video autoplay muted loop playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" poster="imagenes/topografia-4.jpeg">
+              <source src="imagenes/robotica-20.mp4" type="video/mp4">
+              Tu navegador no soporta video.
+            </video>
+          </div>
+
+          <div class="video-frame">
+            <video autoplay muted loop playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" poster="imagenes/robotica-01.jpeg">
+              <source src="imagenes/robotica.mp4" type="video/mp4">
+              Tu navegador no soporta video.
+            </video>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GALERÍA PROFESIONAL -->
+    <section class="topo-gallery-section">
+      <div class="container">
+
+        <div class="section-head topo-gallery-head">
+          <p class="section-tag">Aplicaciones</p>
+          <h2>Topografía para diseño, obra y control técnico.</h2>
+          <p>
+            Aplicamos la información de campo para ordenar decisiones antes y durante la ejecución.
+          </p>
+        </div>
+
+        <div class="topo-pro-gallery">
+
+          <article class="topo-pro-card">
+            <img src="Imagenes/topografia-4.jpeg" alt="Topografía en obra HYC">
+            <div>
+              <span>Obra y construcción</span>
+              <h3>Replanteo, niveles y seguimiento técnico.</h3>
+            </div>
+          </article>
+
+          <article class="topo-pro-card">
+            <img src="imagenes/topografia-7.jpeg" alt="Topografía GNSS HYC">
+            <div>
+              <span>GNSS y terreno</span>
+              <h3>Georreferenciación y control en campo.</h3>
+            </div>
+          </article>
+
+          <article class="topo-pro-card">
+            <img src="imagenes/topografia-13.jpeg" alt="Control topográfico industrial HYC">
+            <div>
+              <span>Control industrial</span>
+              <h3>Precisión para estructuras y plataformas.</h3>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ENTREGABLES SIMPLE -->
+    <section class="deliverables-section">
+      <div class="container deliverables-grid">
+
+        <div>
+          <p class="section-tag">Entregables</p>
+          <h2>Datos útiles para continuar el proyecto.</h2>
+        </div>
+
+        <div class="deliverables-list">
+          <div>
+            <strong>Plano topográfico</strong>
+            <span>Terreno, detalles existentes, niveles y elementos levantados.</span>
+          </div>
+
+          <div>
+            <strong>Curvas de nivel y superficies</strong>
+            <span>Base para diseño, urbanización y movimiento de tierra.</span>
+          </div>
+
+          <div>
+            <strong>Áreas y volúmenes</strong>
+            <span>Datos para presupuesto, plataformas, corte, relleno y control de avances.</span>
+          </div>
+
+          <div>
+            <strong>Archivos digitales</strong>
+            <span>Información organizada para continuar el trabajo técnico en CAD o Civil 3D.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final-cta">
+      <div class="container final-cta-box">
+
+        <div>
+          <p class="section-tag">Cotizá tu levantamiento</p>
+          <h2>¿Necesitás medir un terreno o controlar una obra?</h2>
+          <p>
+            Escribinos y contanos la ubicación general, tamaño aproximado y objetivo del trabajo.
+          </p>
+        </div>
+
+        <div class="final-cta-actions">
+          <a class="btn-main" href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20cotizar%20un%20trabajo%20de%20topograf%C3%ADa" target="_blank">
+            WhatsApp 3368-5015
+          </a>
+
+          <a class="btn-ghost dark-line" href="mailto:hycconstrucciones@yahoo.com">
+            Enviar correo
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-clean-grid">
+
+      <div>
+        <img class="footer-logo" src="imagenes/logo-hyc.png" alt="HYC Diseño y Construcción">
+        <p>
+          Topografía, ingeniería, diseño arquitectónico y gestión técnica para proyectos
+          residenciales, comerciales, urbanos y civiles.
+        </p>
+      </div>
+
+      <div>
+        <h4>Menú</h4>
+        <a href="index.html">Inicio</a>
+        <a href="topografia.html">Topografía</a>
+        <a href="ingenieria.html">Ingeniería</a>
+        <a href="arquitectura.html">Arquitectura</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+
+      <div>
+        <h4>Contacto</h4>
+        <a href="https://wa.me/50433685015" target="_blank">WhatsApp: 3368-5015</a>
+        <a href="mailto:hycconstrucciones@yahoo.com">hycconstrucciones@yahoo.com</a>
+
+       <div class="footer-social">
+  <a href="https://www.facebook.com/profile.php?id=61572391505468" target="_blank" aria-label="Facebook HYC">
+    <img src="imagenes/facebook.png" alt="Facebook">
+  </a>
+
+  <a href="https://www.instagram.com/hycconstrucciones2026/" target="_blank" aria-label="Instagram HYC">
+    <img src="imagenes/instagram.png" alt="Instagram">
+  </a>
+
+  <a href="https://wa.me/50433685015" target="_blank" aria-label="WhatsApp HYC">
+    <img src="imagenes/whatsapp.png" alt="WhatsApp">
+  </a>
+</div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom-clean">
+      <p>© 2026 HYC Diseño & Construcción. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

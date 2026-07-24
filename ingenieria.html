@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ingeniería HYC | Supervisión, presupuestos y gestión técnica</title>
+
+  <meta name="description" content="Servicios de ingeniería HYC: presupuestos, estimaciones, supervisión técnica, control de obra, diseño civil, urbanizaciones, calles y volúmenes." />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ================================
+       INGENIERÍA HYC - VERSIÓN LIMPIA
+    ================================ */
+
+    .eng-hero {
+      position: relative;
+      min-height: 92vh;
+      background: #07111d;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .eng-hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .eng-hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(0.95);
+    }
+
+    .eng-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background:
+        linear-gradient(90deg, rgba(7,17,29,0.94) 0%, rgba(7,17,29,0.78) 45%, rgba(7,17,29,0.28) 100%),
+        linear-gradient(0deg, rgba(7,17,29,0.92) 0%, transparent 60%);
+    }
+
+    .eng-hero-inner {
+      position: relative;
+      z-index: 3;
+      width: min(1180px, calc(100% - 42px));
+      margin-left: 7vw;
+      padding: 180px 0 95px;
+      color: #fff;
+    }
+
+    .eng-hero-inner h1 {
+      max-width: 780px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1;
+      letter-spacing: -2.4px;
+      margin: 0 0 22px;
+    }
+
+    .eng-hero-inner p {
+      max-width: 650px;
+      font-size: 18px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.82);
+      margin: 0;
+    }
+
+    .eng-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .eng-service-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+      max-width: 760px;
+    }
+
+    .eng-service-summary span {
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.90);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .eng-services {
+      padding: 110px 0;
+      background:
+        radial-gradient(circle at top right, rgba(196,154,69,0.12), transparent 30%),
+        linear-gradient(135deg, #f7f3ea, #ffffff);
+    }
+
+    .eng-head {
+      display: grid;
+      grid-template-columns: 0.9fr 0.85fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 52px;
+    }
+
+    .eng-head h2 {
+      font-size: clamp(34px, 4.8vw, 62px);
+      line-height: 1.03;
+      letter-spacing: -2px;
+      color: #111722;
+      margin: 0;
+    }
+
+    .eng-head p {
+      color: #5f6673;
+      font-size: 17px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .eng-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .eng-card {
+      padding: 32px;
+      border-radius: 30px;
+      background: #ffffff;
+      border: 1px solid rgba(11,31,51,0.12);
+      box-shadow: 0 18px 50px rgba(11,31,51,0.08);
+      transition: 0.25s ease;
+    }
+
+    .eng-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 26px 70px rgba(11,31,51,0.13);
+    }
+
+    .eng-card span {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      background: #0b1f33;
+      color: #c49a45;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .eng-card h3 {
+      color: #111722;
+      font-size: 24px;
+      line-height: 1.12;
+      margin: 0 0 12px;
+    }
+
+    .eng-card p {
+      color: #5f6673;
+      font-size: 15.5px;
+      line-height: 1.58;
+      margin: 0;
+    }
+
+    .eng-dark {
+      padding: 110px 0;
+      background:
+        radial-gradient(circle at top right, rgba(196,154,69,0.18), transparent 32%),
+        linear-gradient(135deg, #07111d, #0b1f33);
+      color: #fff;
+    }
+
+    .eng-dark-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eng-dark h2 {
+      max-width: 650px;
+      font-size: clamp(34px, 4.8vw, 62px);
+      line-height: 1.03;
+      letter-spacing: -2px;
+      margin: 0 0 20px;
+      color: #fff;
+    }
+
+    .eng-dark p {
+      color: rgba(255,255,255,0.72);
+      font-size: 17px;
+      line-height: 1.65;
+      margin: 0 0 28px;
+    }
+
+    .eng-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .eng-list span {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.88);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .eng-list span::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #c49a45;
+      box-shadow: 0 0 0 5px rgba(196,154,69,0.16);
+      flex-shrink: 0;
+    }
+
+    .eng-visual {
+      position: relative;
+      min-height: 540px;
+      border-radius: 38px;
+      overflow: hidden;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.30);
+      background: #111;
+    }
+
+    .eng-visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .eng-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.76), transparent 58%);
+    }
+
+    .eng-visual-caption {
+      position: absolute;
+      z-index: 2;
+      left: 32px;
+      right: 32px;
+      bottom: 30px;
+    }
+
+    .eng-visual-caption small {
+      color: #c49a45;
+      font-weight: 900;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .eng-visual-caption h3 {
+      margin: 10px 0 0;
+      color: #fff;
+      font-size: 30px;
+      line-height: 1.1;
+    }
+
+    .eng-process {
+      padding: 110px 0;
+      background: #ffffff;
+    }
+
+    .eng-process-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .eng-process h2 {
+      font-size: clamp(34px, 4.6vw, 60px);
+      line-height: 1.03;
+      letter-spacing: -2px;
+      color: #111722;
+      margin: 0;
+    }
+
+    .eng-process-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .eng-process-item {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 18px;
+      padding: 26px;
+      border-radius: 28px;
+      background: #f7f3ea;
+      border: 1px solid rgba(11,31,51,0.10);
+    }
+
+    .eng-process-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #0b1f33;
+      color: #c49a45;
+      font-weight: 900;
+    }
+
+    .eng-process-item h3 {
+      margin: 0 0 6px;
+      font-size: 22px;
+      color: #111722;
+    }
+
+    .eng-process-item p {
+      margin: 0;
+      color: #5f6673;
+      font-size: 15.5px;
+      line-height: 1.55;
+    }
+
+    .eng-cta {
+      padding: 95px 0;
+      background:
+        linear-gradient(90deg, rgba(7,17,29,0.95), rgba(11,31,51,0.86)),
+        url("imagenes/topografia-12.jpeg");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+
+    .eng-cta-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eng-cta h2 {
+      max-width: 780px;
+      font-size: clamp(34px, 4.2vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      color: #fff;
+      margin: 0 0 14px;
+    }
+
+    .eng-cta p {
+      max-width: 680px;
+      color: rgba(255,255,255,0.75);
+      font-size: 17px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    @media (max-width: 1050px) {
+      .eng-head,
+      .eng-dark-grid,
+      .eng-process-grid,
+      .eng-cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .eng-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .eng-visual {
+        min-height: 440px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .eng-hero-inner {
+        margin-left: 24px;
+        padding: 150px 0 70px;
+      }
+
+      .eng-hero-inner h1 {
+        font-size: 40px;
+        letter-spacing: -1.2px;
+      }
+
+      .eng-actions {
+        flex-direction: column;
+      }
+
+      .eng-services,
+      .eng-dark,
+      .eng-process,
+      .eng-cta {
+        padding: 78px 0;
+      }
+
+      .eng-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .eng-process-item {
+        grid-template-columns: 1fr;
+      }
+
+      .eng-visual {
+        min-height: 340px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="nav-wrap">
+
+      <a href="index.html" class="brand-logo identity-brand">
+        <img src="imagenes/logo-hyc.png" alt="HYC Diseño y Construcción">
+        <span class="brand-name">
+          <strong>HYC</strong>
+          <small>Diseño & Construcción</small>
+        </span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+      <label for="menu-toggle" class="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="topografia.html">Topografía</a>
+        <a href="ingenieria.html" class="active">Ingeniería</a>
+        <a href="arquitectura.html">Arquitectura</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <div class="nav-social">
+        <a href="https://www.facebook.com/profile.php?id=61572391505468" target="_blank" aria-label="Facebook HYC">
+          <img src="imagenes/facebook.png" alt="Facebook">
+        </a>
+
+        <a href="https://www.instagram.com/hycconstrucciones2026/" target="_blank" aria-label="Instagram HYC">
+  <img src="imagenes/instagram.png" alt="Instagram">
+</a>
+
+        <a href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20informaci%C3%B3n%20sobre%20servicios%20de%20ingenier%C3%ADa" target="_blank" aria-label="WhatsApp HYC">
+          <img src="imagenes/whatsapp.png" alt="WhatsApp">
+        </a>
+      </div>
+
+      <a class="nav-quote" href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20cotizar%20servicios%20de%20ingenier%C3%ADa" target="_blank">
+        Cotizar
+      </a>
+
+    </div>
+  </header>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a class="whatsapp-float" href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20cotizar%20servicios%20de%20ingenier%C3%ADa" target="_blank" aria-label="Escribir por WhatsApp">
+    <img src="imagenes/whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <main>
+
+    <!-- PORTADA -->
+    <section class="eng-hero">
+      <div class="eng-hero-media">
+        <img src="imagenes/ingenieria.jpg" alt="Ingeniería, supervisión y control de obra">
+      </div>
+
+      <div class="container eng-hero-inner">
+        <p class="page-kicker">Ingeniería HYC</p>
+
+        <h1>Ingeniería para planificar y controlar la obra.</h1>
+
+        <p>
+          Presupuestos, estimaciones, supervisión técnica, diseño civil, control de calidad,
+          volúmenes y seguimiento para proyectos residenciales, comerciales y urbanísticos.
+        </p>
+
+        <div class="eng-actions">
+          <a href="#servicios-ingenieria" class="btn-main">Ver servicios</a>
+          <a href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20informaci%C3%B3n%20sobre%20servicios%20de%20ingenier%C3%ADa" target="_blank" class="btn-ghost">
+            Consultar
+          </a>
+        </div>
+
+        <div class="eng-service-summary">
+          <span>Presupuestos</span>
+          <span>Supervisión</span>
+          <span>Urbanizaciones</span>
+          <span>Estimaciones</span>
+          <span>Volúmenes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="eng-services" id="servicios-ingenieria">
+      <div class="container">
+
+        <div class="eng-head">
+          <div>
+            <p class="section-tag">Servicios de ingeniería</p>
+            <h2>Soluciones técnicas para desarrollar proyectos con orden.</h2>
+          </div>
+
+          <p>
+            El área de ingeniería integra planificación, diseño civil, presupuesto, supervisión,
+            control de calidad y seguimiento técnico para que la obra avance con mayor claridad.
+          </p>
+        </div>
+
+        <div class="eng-grid">
+
+          <article class="eng-card">
+            <span>01</span>
+            <h3>Urbanizaciones y lotificaciones</h3>
+          </article>
+
+          <article class="eng-card">
+            <span>02</span>
+            <h3>Calles y accesos</h3>
+          </article>
+
+          <article class="eng-card">
+            <span>03</span>
+            <h3>Presupuestos</h3>
+          </article>
+
+          <article class="eng-card">
+            <span>04</span>
+            <h3>Estimaciones</h3>
+          </article>
+
+          <article class="eng-card">
+            <span>05</span>
+            <h3>Supervisión técnica</h3>
+          </article>
+
+          <article class="eng-card">
+            <span>06</span>
+            <h3>Control de calidad</h3>
+          </article>
+
+          <article class="eng-card">
+            <span>07</span>
+            <h3>Volúmenes de obra</h3>
+          </article>
+
+          <article class="eng-card">
+            <span>08</span>
+            <h3>Gestión técnica</h3>
+          </article>
+
+          <article class="eng-card">
+            <span>09</span>
+            <h3>Criterios estructurales</h3>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BLOQUE OSCURO -->
+    <section class="eng-dark">
+      <div class="container eng-dark-grid">
+
+        <div>
+          <p class="section-tag">Gestión y control</p>
+          <h2>Una obra necesita decisiones técnicas, no improvisación.</h2>
+
+          <p>
+            La ingeniería permite ordenar costos, niveles, cantidades, calidad, avance y coordinación
+            antes y durante la ejecución.
+          </p>
+
+          <div class="eng-list">
+            <span>Supervisión de casas, edificios, urbanizaciones y obras civiles</span>
+            <span>Control de avances, calidad y ejecución</span>
+            <span>Presupuestos, estimaciones y cantidades de obra</span>
+            <span>Diseño técnico de calles, plataformas y urbanizaciones</span>
+            <span>Control de volúmenes, niveles y movimientos de tierra</span>
+          </div>
+        </div>
+
+   <div class="eng-visual">
+  <video autoplay muted loop playsinline>
+    <source src="imagenes/0326.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+
+  <div class="eng-visual-caption">
+    <small>Control técnico</small>
+    <h3>Seguimiento, calidad, costos y avance de obra.</h3>
+  </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="eng-process">
+      <div class="container eng-process-grid">
+
+        <div>
+          <p class="section-tag">Proceso</p>
+          <h2>Una ruta técnica para avanzar con claridad.</h2>
+        </div>
+
+        <div class="eng-process-list">
+
+          <div class="eng-process-item">
+            <div class="eng-process-number">01</div>
+            <div>
+              <h3>Revisión inicial</h3>
+              <p>Se analiza la idea, terreno, planos, alcance y necesidades principales del proyecto.</p>
+            </div>
+          </div>
+
+          <div class="eng-process-item">
+            <div class="eng-process-number">02</div>
+            <div>
+              <h3>Definición técnica</h3>
+              <p>Se ordenan criterios, niveles, cantidades, costos, prioridades y etapas de trabajo.</p>
+            </div>
+          </div>
+
+          <div class="eng-process-item">
+            <div class="eng-process-number">03</div>
+            <div>
+              <h3>Presupuesto y planificación</h3>
+              <p>Se estructuran partidas, estimaciones, alcances y control económico del proyecto.</p>
+            </div>
+          </div>
+
+          <div class="eng-process-item">
+            <div class="eng-process-number">04</div>
+            <div>
+              <h3>Supervisión y seguimiento</h3>
+              <p>Se revisa avance, calidad, niveles, ejecución y coordinación durante la obra.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="eng-cta">
+      <div class="container eng-cta-box">
+
+        <div>
+          <p class="section-tag">Cotizar ingeniería</p>
+          <h2>Tu proyecto puede iniciar con una base técnica más clara.</h2>
+          <p>
+            Contanos qué necesitás: presupuesto, supervisión, urbanización, calles, volúmenes,
+            estimaciones o control de obra.
+          </p>
+        </div>
+
+        <a class="btn-main" href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20cotizar%20servicios%20de%20ingenier%C3%ADa" target="_blank">
+          Escribir a HYC
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-clean-grid">
+
+      <div>
+        <img class="footer-logo" src="imagenes/logo-hyc.png" alt="HYC Diseño y Construcción">
+        <p>
+          Topografía, ingeniería, diseño arquitectónico y gestión técnica para proyectos
+          residenciales, comerciales, urbanos y civiles.
+        </p>
+      </div>
+
+      <div>
+        <h4>Menú</h4>
+        <a href="index.html">Inicio</a>
+        <a href="topografia.html">Topografía</a>
+        <a href="ingenieria.html">Ingeniería</a>
+        <a href="arquitectura.html">Arquitectura</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+
+      <div>
+        <h4>Contacto</h4>
+        <a href="https://wa.me/50433685015" target="_blank">WhatsApp: 3368-5015</a>
+        <a href="mailto:hycconstrucciones@yahoo.com">hycconstrucciones@yahoo.com</a>
+        
+<div class="footer-social">
+  <a href="https://www.facebook.com/profile.php?id=61572391505468" target="_blank" aria-label="Facebook HYC">
+    <img src="imagenes/facebook.png" alt="Facebook">
+  </a>
+
+  <a href="https://www.instagram.com/hycconstrucciones2026/" target="_blank" aria-label="Instagram HYC">
+    <img src="imagenes/instagram.png" alt="Instagram">
+  </a>
+
+  <a href="https://wa.me/50433685015" target="_blank" aria-label="WhatsApp HYC">
+    <img src="imagenes/whatsapp.png" alt="WhatsApp">
+  </a>
+</div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom-clean">
+      <p>© 2026 HYC Diseño & Construcción. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
