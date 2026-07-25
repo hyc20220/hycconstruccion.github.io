@@ -3045,3 +3045,36 @@ a {
     flex-shrink: 0 !important;
   }
 }
+
+/* ================================
+   OCULTAR CUADRITOS DEL INICIO EN CELULAR
+================================ */
+
+@media (max-width: 768px) {
+  .mobile-hide-home-cards {
+    display: none !important;
+  }
+}
+
+/* ================================
+   OCULTAR DATOS DE CASA EN CELULAR
+================================ */
+
+@media (max-width: 768px) {
+  #modelSpecs,
+  .model-specs {
+    display: none !important;
+  }
+
+  .model-premium-info {
+    padding-bottom: 20px !important;
+  }
+
+  .model-premium-info #modelDescription {
+    margin-bottom: 22px !important;
+  }
+
+  .model-actions-mobile {
+    margin-top: 18px !important;
+  }
+}
