@@ -2108,3 +2108,622 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+/* ================================
+   TARJETA ARQUITECTURA - HOME
+   PC extendida / celular compacta
+================================ */
+
+.home-arch-feature {
+  padding: 80px 0 100px;
+  background: #f7f3ea;
+}
+
+.home-arch-card {
+  position: relative;
+  display: block;
+  width: min(1180px, calc(100% - 80px));
+  height: 520px;
+  margin: 0 auto;
+  border-radius: 38px;
+  overflow: hidden;
+  text-decoration: none;
+  background: #111722;
+  box-shadow: 0 28px 80px rgba(11, 31, 51, 0.18);
+}
+
+.home-arch-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.home-arch-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(7, 17, 29, 0.82), rgba(7, 17, 29, 0.28)),
+    linear-gradient(0deg, rgba(7, 17, 29, 0.78), transparent 58%);
+}
+
+.home-arch-overlay {
+  position: absolute;
+  z-index: 2;
+  left: 56px;
+  bottom: 52px;
+  max-width: 680px;
+  color: #ffffff;
+}
+
+.home-arch-overlay p {
+  margin: 0 0 12px;
+  color: #c49a45;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.home-arch-overlay h2 {
+  margin: 0 0 22px;
+  color: #ffffff;
+  font-size: clamp(38px, 4.5vw, 62px);
+  line-height: 1.02;
+  letter-spacing: -2px;
+}
+
+.home-arch-overlay span {
+  color: #c49a45;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.home-arch-card:hover img {
+  transform: scale(1.04);
+}
+
+/* CELULAR */
+@media (max-width: 720px) {
+  .home-arch-feature {
+    padding: 38px 0 55px;
+  }
+
+  .home-arch-card {
+    width: calc(100% - 32px);
+    height: 330px;
+    border-radius: 26px;
+  }
+
+  .home-arch-card::after {
+    background:
+      linear-gradient(0deg, rgba(7, 17, 29, 0.88), rgba(7, 17, 29, 0.22));
+  }
+
+  .home-arch-overlay {
+    left: 24px;
+    right: 24px;
+    bottom: 26px;
+    max-width: none;
+  }
+
+  .home-arch-overlay p {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+
+  .home-arch-overlay h2 {
+    font-size: 30px !important;
+    line-height: 1.05 !important;
+    letter-spacing: -1px;
+    margin-bottom: 14px;
+  }
+
+  .home-arch-overlay span {
+    font-size: 12px;
+  }
+}
+
+/* =========================================
+   CORRECCIÓN PORTADA HOME EN CELULAR
+   Limpia el hero y oculta tarjetas flotantes
+========================================= */
+
+@media (max-width: 720px) {
+
+  html,
+  body {
+    overflow-x: hidden !important;
+  }
+
+  /* PORTADA PRINCIPAL */
+  .hero,
+  .home-hero,
+  .main-hero,
+  .hero-section {
+    min-height: 100svh !important;
+    height: auto !important;
+    padding: 145px 20px 60px !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important;
+    background-position: center center !important;
+  }
+
+  /* Oscurecer un poco para que lea bien */
+  .hero::after,
+  .home-hero::after,
+  .main-hero::after,
+  .hero-section::after {
+    background:
+      linear-gradient(90deg, rgba(7, 17, 29, 0.90), rgba(7, 17, 29, 0.45)),
+      linear-gradient(0deg, rgba(7, 17, 29, 0.92), rgba(7, 17, 29, 0.20)) !important;
+  }
+
+  /* CONTENEDOR DEL TEXTO */
+  .hero .container,
+  .home-hero .container,
+  .main-hero .container,
+  .hero-section .container,
+  .hero-content,
+  .hero-inner,
+  .home-hero-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    position: relative !important;
+    z-index: 3 !important;
+  }
+
+  /* TÍTULO PRINCIPAL */
+  .hero h1,
+  .home-hero h1,
+  .main-hero h1,
+  .hero-section h1,
+  .hero-title {
+    font-size: 43px !important;
+    line-height: 1.02 !important;
+    letter-spacing: -1.5px !important;
+    max-width: 95% !important;
+    margin-bottom: 18px !important;
+  }
+
+  /* TEXTO */
+  .hero p,
+  .home-hero p,
+  .main-hero p,
+  .hero-section p {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    max-width: 94% !important;
+  }
+
+  /* BOTONES */
+  .hero-actions,
+  .home-hero-actions,
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-top: 26px !important;
+  }
+
+  .hero-actions a,
+  .home-hero-actions a,
+  .hero-buttons a,
+  .btn-main,
+  .btn-ghost {
+    width: min(100%, 320px) !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 16px 22px !important;
+    font-size: 13px !important;
+  }
+
+  /* OCULTAR LAS 3 TARJETAS EN CELULAR */
+  .hero-cards,
+  .hero-services,
+  .hero-info-cards,
+  .hero-feature-cards,
+  .hero-mini-grid,
+  .hero-bottom-cards,
+  .floating-cards,
+  .service-preview-cards {
+    display: none !important;
+  }
+
+  /* Por si las tarjetas tienen otra clase individual */
+  .hero-card,
+  .hero-service-card,
+  .floating-card {
+    display: none !important;
+  }
+
+  /* WHATSAPP */
+  .whatsapp-float {
+    width: 58px !important;
+    height: 58px !important;
+    right: 18px !important;
+    bottom: 18px !important;
+  }
+
+  .whatsapp-float img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+/* ==================================================
+   MODO CELULAR HYC - MENOS TEXTO / MÁS VISUAL
+   Pegar al final de style.css
+================================================== */
+
+@media (max-width: 720px) {
+
+  html,
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .container {
+    width: calc(100% - 32px) !important;
+    max-width: 100% !important;
+  }
+
+  section {
+    padding-top: 58px !important;
+    padding-bottom: 58px !important;
+  }
+
+  .section-tag,
+  .page-kicker {
+    font-size: 12px !important;
+    letter-spacing: 2.4px !important;
+    margin-bottom: 12px !important;
+  }
+
+  h1 {
+    font-size: 38px !important;
+    line-height: 1.04 !important;
+    letter-spacing: -1.4px !important;
+  }
+
+  h2 {
+    font-size: 32px !important;
+    line-height: 1.05 !important;
+    letter-spacing: -1.2px !important;
+  }
+
+  h3 {
+    font-size: 22px !important;
+    line-height: 1.12 !important;
+  }
+
+  p {
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Evita que el menú tape contenido al bajar */
+  .site-header {
+    z-index: 9999 !important;
+  }
+
+  main {
+    overflow: hidden !important;
+  }
+
+  /* =========================
+     MODELOS DE CASAS EN MÓVIL
+     Quita fichas largas
+  ========================= */
+
+  .model-showcase,
+  .models-section,
+  .house-models,
+  .model-section {
+    padding-top: 115px !important;
+    padding-bottom: 55px !important;
+  }
+
+  .model-layout,
+  .model-detail,
+  .model-display,
+  .models-showcase,
+  .model-grid,
+  .model-view {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .model-card,
+  .model-info,
+  .model-content,
+  .model-panel {
+    padding: 24px !important;
+    border-radius: 28px !important;
+    min-height: auto !important;
+  }
+
+  #modelType,
+  .model-type {
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 10px !important;
+  }
+
+  #modelTitle,
+  .model-title {
+    font-size: 34px !important;
+    line-height: 1.02 !important;
+    margin-bottom: 12px !important;
+  }
+
+  #modelDescription,
+  .model-description {
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 18px !important;
+
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  /* Oculta especificaciones largas en celular */
+  #modelSpecs,
+  .model-specs,
+  .specs,
+  .model-features,
+  .house-specs {
+    display: none !important;
+  }
+
+  /* Oculta mini galería en celular para no alargar */
+  #modelGallery,
+  .model-gallery,
+  .model-thumbs,
+  .thumb-gallery {
+    display: none !important;
+  }
+
+  #modelWhatsapp,
+  .model-whatsapp,
+  .model-btn,
+  .model-card .btn-main {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 15px 20px !important;
+    font-size: 12px !important;
+    margin-top: 10px !important;
+  }
+
+  #mainImage,
+  .model-main-image,
+  .model-main img,
+  .model-image img {
+    height: 260px !important;
+    border-radius: 26px !important;
+    object-fit: cover !important;
+  }
+
+  /* =========================
+     TARJETAS DE SERVICIOS
+     Menos texto, más rápido
+  ========================= */
+
+  .services-grid,
+  .arch-services-grid,
+  .eng-grid,
+  .topo-services-grid,
+  .cards-grid,
+  .arch-grid,
+  .service-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .service-card,
+  .arch-card,
+  .eng-card,
+  .topo-card,
+  .feature-card {
+    padding: 22px !important;
+    border-radius: 24px !important;
+    min-height: auto !important;
+  }
+
+  .service-card p,
+  .arch-card p,
+  .eng-card p,
+  .topo-card p,
+  .feature-card p {
+    font-size: 14.5px !important;
+    line-height: 1.42 !important;
+
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  /* =========================
+     OCULTAR SECCIONES LARGAS EN CELULAR
+     Estas aburren en móvil
+  ========================= */
+
+  .arch-process,
+  .eng-process,
+  .topo-process,
+  .process-section,
+  .process-grid,
+  .identity-section {
+    display: none !important;
+  }
+
+  /* =========================
+     BLOQUES OSCUROS Y CTA
+  ========================= */
+
+  .eng-dark,
+  .arch-dark,
+  .topo-dark,
+  .dark-section {
+    padding: 60px 0 !important;
+  }
+
+  .eng-dark-grid,
+  .arch-dark-grid,
+  .topo-dark-grid,
+  .dark-grid {
+    display: block !important;
+  }
+
+  .eng-list,
+  .arch-list,
+  .topo-list {
+    gap: 10px !important;
+    margin-top: 20px !important;
+  }
+
+  .eng-list span,
+  .arch-list span,
+  .topo-list span {
+    font-size: 14px !important;
+    line-height: 1.35 !important;
+  }
+
+  .eng-visual,
+  .arch-visual,
+  .topo-visual {
+    min-height: 280px !important;
+    height: 280px !important;
+    margin-top: 28px !important;
+    border-radius: 26px !important;
+  }
+
+  /* =========================
+     BOTONES EN CELULAR
+  ========================= */
+
+  .btn-main,
+  .btn-ghost,
+  .nav-quote {
+    width: 100% !important;
+    max-width: 310px !important;
+    padding: 15px 20px !important;
+    font-size: 12px !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .whatsapp-float {
+    width: 58px !important;
+    height: 58px !important;
+    right: 18px !important;
+    bottom: 18px !important;
+  }
+
+  .whatsapp-float img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+/* ================================
+   FOOTER LIMPIO EN CELULAR
+================================ */
+
+@media (max-width: 720px) {
+
+  .site-footer {
+    padding: 55px 0 30px !important;
+  }
+
+  .footer-clean-grid {
+    display: block !important;
+    text-align: left !important;
+  }
+
+  .footer-logo {
+    width: 88px !important;
+    max-width: 88px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .site-footer p {
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+    max-width: 92% !important;
+    margin-bottom: 28px !important;
+  }
+
+  /* Oculta el menú del footer en celular */
+  .site-footer h4,
+  .site-footer div:nth-child(2) {
+    display: none !important;
+  }
+
+  /* Contacto más compacto */
+  .site-footer div:nth-child(3) {
+    margin-top: 10px !important;
+  }
+
+  .site-footer div:nth-child(3) h4 {
+    display: block !important;
+    color: #c49a45 !important;
+    font-size: 18px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .site-footer a {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .footer-social {
+    margin-top: 22px !important;
+    display: flex !important;
+    gap: 12px !important;
+  }
+
+  .footer-social a {
+    width: 42px !important;
+    height: 42px !important;
+    display: grid !important;
+    place-items: center !important;
+    border-radius: 50% !important;
+    background: rgba(255,255,255,0.08) !important;
+  }
+
+  .footer-social img {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .footer-bottom-clean {
+    margin-top: 28px !important;
+    padding-top: 18px !important;
+  }
+
+  .footer-bottom-clean p {
+    font-size: 12px !important;
+    opacity: 0.65 !important;
+  }
+}
