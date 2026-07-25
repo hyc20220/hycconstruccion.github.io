@@ -422,69 +422,105 @@
       }
     }
 
-    /* CORRECCIÓN DEFINITIVA BLOQUE INGENIERÍA EN CELULAR */
+/* ==========================================
+   CORRECCIÓN DEFINITIVA INGENIERÍA EN CELULAR
+========================================== */
+
 @media (max-width: 768px) {
 
   .eng-dark {
-    padding: 110px 0 65px !important;
-  }
-
-  .eng-dark .eng-dark-grid {
-    display: block !important;
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Quitar toda la lista de viñetas */
-  .eng-dark .eng-list {
-    display: none !important;
-  }
-
-  /* Texto superior compacto */
-  .eng-dark h2 {
-    font-size: 37px !important;
-    line-height: 1.03 !important;
-    margin-bottom: 18px !important;
-  }
-
-  .eng-dark > .container > div:first-child > p:not(.section-tag),
-  .eng-dark .eng-dark-grid > div:first-child > p:not(.section-tag) {
-    font-size: 16px !important;
-    line-height: 1.5 !important;
-    margin-bottom: 0 !important;
-  }
-
-  /* El video ocupa el espacio de la lista eliminada */
-  .eng-dark .eng-visual {
-    position: relative !important;
-    display: block !important;
-    width: 100% !important;
-    height: 520px !important;
-    min-height: 520px !important;
-    margin-top: 30px !important;
-    border-radius: 30px !important;
+    padding: 70px 0 60px !important;
     overflow: hidden !important;
   }
 
-  .eng-dark .eng-visual video {
+  .eng-dark-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 30px !important;
+    align-items: stretch !important;
+  }
+
+  /* Conserva únicamente título y párrafo */
+  .eng-dark-grid > div:first-child {
+    width: 100% !important;
+  }
+
+  .eng-dark .section-tag {
+    margin: 0 0 12px !important;
+    font-size: 12px !important;
+    letter-spacing: 2.4px !important;
+  }
+
+  .eng-dark h2 {
+    margin: 0 0 18px !important;
+    max-width: 100% !important;
+    font-size: 34px !important;
+    line-height: 1.04 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .eng-dark p {
+    margin: 0 !important;
+    max-width: 100% !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Elimina completamente la lista en celular */
+  .eng-dark .eng-list,
+  .eng-list {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* El video utiliza el espacio liberado */
+  .eng-dark .eng-visual,
+  .eng-visual {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 4 / 5 !important;
+    margin: 0 !important;
+    border-radius: 28px !important;
+    overflow: hidden !important;
+    background: #07131f !important;
+  }
+
+  /* Muestra el video completo, sin recortarlo */
+  .eng-dark .eng-visual video,
+  .eng-visual video {
     position: absolute !important;
     inset: 0 !important;
     display: block !important;
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
     object-position: center !important;
+    background: #07131f !important;
   }
 
-  .eng-dark .eng-visual-caption {
+  .eng-visual-caption {
     position: absolute !important;
-    left: 26px !important;
-    right: 26px !important;
-    bottom: 28px !important;
     z-index: 3 !important;
+    right: 24px !important;
+    bottom: 26px !important;
+    left: 24px !important;
   }
 
-  .eng-dark .eng-visual-caption h3 {
-    font-size: 28px !important;
+  .eng-visual-caption small {
+    font-size: 12px !important;
+    letter-spacing: 2px !important;
+  }
+
+  .eng-visual-caption h3 {
+    margin: 9px 0 0 !important;
+    font-size: 27px !important;
     line-height: 1.08 !important;
   }
 }
