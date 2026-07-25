@@ -2727,3 +2727,321 @@ a {
     opacity: 0.65 !important;
   }
 }
+
+/* =========================
+   INICIO MOBILE LIMPIO
+========================= */
+@media (max-width: 768px) {
+
+  .hero-grid,
+  .home-hero-grid,
+  .intro-grid {
+    display: block !important;
+  }
+
+  /* OCULTAR LOS CUADRITOS DE LA DERECHA EN CELULAR */
+  .hero-cards,
+  .home-hero-cards,
+  .hero-mini-cards,
+  .services-preview-cards,
+  .hero-side-cards {
+    display: none !important;
+  }
+
+  .hero,
+  .home-hero,
+  .intro-hero {
+    min-height: auto !important;
+    padding: 145px 0 60px !important;
+    background-position: center center !important;
+  }
+
+  .hero-copy,
+  .home-hero-copy,
+  .intro-copy {
+    max-width: 100% !important;
+    padding-right: 0 !important;
+  }
+
+  .hero-copy h1,
+  .home-hero-copy h1,
+  .intro-copy h1 {
+    font-size: clamp(40px, 11vw, 56px) !important;
+    line-height: 0.96 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .hero-copy p,
+  .home-hero-copy p,
+  .intro-copy p {
+    font-size: 18px !important;
+    line-height: 1.45 !important;
+    max-width: 95% !important;
+    margin-bottom: 22px !important;
+  }
+
+  .hero-actions,
+  .hero-buttons,
+  .home-hero-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    align-items: flex-start !important;
+  }
+
+  .hero-actions a,
+  .hero-buttons a,
+  .home-hero-actions a {
+    width: 100% !important;
+    max-width: 320px !important;
+    text-align: center !important;
+  }
+}
+
+/* =========================
+   MODELOS MOBILE MEJORADOS
+========================= */
+@media (max-width: 768px) {
+
+  .model-tabs {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .model-tabs button,
+  .model-tab {
+    min-width: 140px !important;
+    text-align: center !important;
+  }
+
+  .model-showcase,
+  .model-layout,
+  .model-viewer {
+    display: block !important;
+  }
+
+  .model-image-wrap,
+  .model-main-image,
+  .model-hero-image {
+    width: 100% !important;
+    height: 280px !important;
+    border-radius: 28px !important;
+    overflow: hidden !important;
+    margin-bottom: 18px !important;
+  }
+
+  #mainImage,
+  .model-image-wrap img,
+  .model-main-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    display: block !important;
+  }
+
+  .model-content,
+  .model-info-panel,
+  .model-copy {
+    width: 100% !important;
+    padding: 22px !important;
+  }
+
+  #modelTitle {
+    font-size: clamp(34px, 9vw, 44px) !important;
+    line-height: 1.02 !important;
+    margin-bottom: 12px !important;
+  }
+
+  #modelDescription {
+    font-size: 17px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 18px !important;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Specs más compactas */
+  #modelSpecs {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px 14px !important;
+    margin-bottom: 18px !important;
+  }
+
+  #modelSpecs span {
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  #modelWhatsapp {
+    width: 100% !important;
+    text-align: center !important;
+    display: block !important;
+    margin-bottom: 12px !important;
+  }
+
+  .toggle-gallery-btn {
+    width: 100% !important;
+    display: block !important;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    border-radius: 999px;
+    padding: 14px 18px;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    cursor: pointer;
+  }
+
+  /* GALERÍA OCULTA AL INICIO */
+  #modelGallery {
+    display: none !important;
+  }
+
+  /* AL TOCAR BOTÓN, APARECE */
+  #modelGallery.mobile-open {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+    margin-top: 8px !important;
+  }
+
+  #modelGallery img {
+    width: 100% !important;
+    height: 86px !important;
+    object-fit: cover !important;
+    border-radius: 14px !important;
+    cursor: pointer;
+  }
+}
+
+/* ================================
+   BOTÓN VER INTERIORES / MODELOS
+================================ */
+
+.toggle-gallery-btn {
+  display: none;
+}
+
+.model-actions-mobile {
+  display: block;
+}
+
+/* CELULAR */
+@media (max-width: 768px) {
+
+  .model-actions-mobile {
+    display: grid !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .model-actions-mobile .btn-main {
+    width: 100% !important;
+    max-width: none !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .toggle-gallery-btn {
+    display: block !important;
+    width: 100% !important;
+    border: 1px solid rgba(255,255,255,0.18) !important;
+    background: rgba(255,255,255,0.08) !important;
+    color: #ffffff !important;
+    border-radius: 999px !important;
+    padding: 15px 20px !important;
+    font-size: 13px !important;
+    font-weight: 900 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+  }
+
+  .toggle-gallery-btn:hover {
+    background: rgba(255,255,255,0.14) !important;
+  }
+
+  /* Oculta la galería al inicio en celular */
+  #modelGallery {
+    display: none !important;
+  }
+
+  /* La muestra cuando se toca Ver interiores */
+  #modelGallery.mobile-open {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+    margin-top: 16px !important;
+  }
+
+  #modelGallery.mobile-open img {
+    width: 100% !important;
+    height: 88px !important;
+    object-fit: cover !important;
+    border-radius: 14px !important;
+  }
+}
+
+/* ==================================
+   MOSTRAR NOMBRE HYC EN CELULAR
+================================== */
+
+@media (max-width: 768px) {
+
+  .brand-logo,
+  .identity-brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    max-width: 230px !important;
+  }
+
+  .brand-logo img,
+  .identity-brand img {
+    width: 58px !important;
+    height: 58px !important;
+    object-fit: contain !important;
+  }
+
+  .brand-name {
+    display: flex !important;
+    flex-direction: column !important;
+    line-height: 1.05 !important;
+  }
+
+  .brand-name strong {
+    display: block !important;
+    font-size: 18px !important;
+    font-weight: 900 !important;
+    color: #8fa19d !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .brand-name small {
+    display: block !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    color: #8fa19d !important;
+    letter-spacing: 0.1px !important;
+    white-space: nowrap !important;
+  }
+
+  .nav-wrap {
+    gap: 10px !important;
+  }
+
+  .menu-btn {
+    flex-shrink: 0 !important;
+  }
+}
