@@ -3093,3 +3093,103 @@ a {
     pointer-events: none !important;
   }
 }
+
+/* =====================================
+   INGENIERÍA - BLOQUE OSCURO EN CELULAR
+   Limpio: texto + video grande
+===================================== */
+
+@media (max-width: 768px) {
+
+  .eng-dark {
+    padding: 95px 0 70px !important;
+    background: #071927 !important;
+  }
+
+  .eng-dark-grid {
+    display: block !important;
+  }
+
+  .eng-dark .section-tag {
+    font-size: 12px !important;
+    letter-spacing: 3px !important;
+    color: #d3a647 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .eng-dark h2 {
+    font-size: 38px !important;
+    line-height: 1.02 !important;
+    letter-spacing: -1.4px !important;
+    margin-bottom: 20px !important;
+    color: #ffffff !important;
+  }
+
+  .eng-dark p {
+    font-size: 17px !important;
+    line-height: 1.55 !important;
+    color: rgba(255, 255, 255, 0.78) !important;
+    max-width: 94% !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Quitamos la lista en celular para que no se vea pesado */
+  .eng-list {
+    display: none !important;
+  }
+
+  /* Video grande y limpio */
+  .eng-visual {
+    width: 100% !important;
+    height: 420px !important;
+    min-height: 420px !important;
+    margin-top: 34px !important;
+    border-radius: 30px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    background: #111 !important;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  .eng-visual video,
+  .eng-visual img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  .eng-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(0deg, rgba(7, 25, 39, 0.82), rgba(7, 25, 39, 0.05) 58%);
+    z-index: 1;
+  }
+
+  .eng-visual-caption {
+    position: absolute !important;
+    left: 26px !important;
+    right: 26px !important;
+    bottom: 28px !important;
+    z-index: 2 !important;
+  }
+
+  .eng-visual-caption small {
+    color: #d3a647 !important;
+    font-size: 12px !important;
+    letter-spacing: 2.5px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+  }
+
+  .eng-visual-caption h3 {
+    color: #ffffff !important;
+    font-size: 28px !important;
+    line-height: 1.08 !important;
+    margin-top: 10px !important;
+  }
+}
