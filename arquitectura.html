@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+)<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -569,11 +569,15 @@
             <span>Parqueo 2 vehículos</span>
             <span>Patio y lavandería</span>
           </div>
+<div class="model-actions-mobile">
+  <a class="btn-main" id="modelWhatsapp" href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20informaci%C3%B3n%20sobre%20Casa%20Alba%20HYC" target="_blank">
+    Consultar este modelo
+  </a>
 
-          <a class="btn-main" id="modelWhatsapp" href="https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20informaci%C3%B3n%20sobre%20Casa%20Alba%20HYC" target="_blank">
-            Consultar este modelo
-          </a>
-        </div>
+  <button type="button" class="toggle-gallery-btn" onclick="toggleModelGallery()">
+    Ver interiores
+  </button>
+</div>
 
         <div class="model-premium-gallery" id="modelGallery">
           <img src="imagenes/casa-alba-fachada.jpeg" alt="Casa Alba fachada">
@@ -732,9 +736,8 @@
     <div class="container footer-clean-grid">
 
       <div>
-        <img class="footer-logo" src="imagenes/logo-hyc.png" alt="HYC Diseño y Construcción">
-        <p>
-          <p>
+     <img class="footer-logo" src="imagenes/logo-hyc.png" alt="HYC Diseño y Construcción">
+<p>
   Topografía, ingeniería y arquitectura para desarrollar proyectos con orden técnico.
 </p>
         </p>
@@ -777,95 +780,108 @@
   </footer>
 
   <script>
-    const models = {
-      alba: {
-        type: "Modelo práctico",
-        title: "Casa Alba HYC",
-        description: "Vivienda de un nivel, funcional y clara, pensada para familias que buscan iniciar con una casa cómoda, bien distribuida y con espacios esenciales.",
-        main: "imagenes/casa-alba-fachada.jpeg",
-        specs: ["147 m² construcción", "200 m² lote", "2 habitaciones", "1 baño", "Parqueo 2 vehículos", "Patio y lavandería"],
-        gallery: [
-          "imagenes/casa-alba-fachada.jpeg",
-          "imagenes/casa-alba-sala-comedor.jpeg",
-          "imagenes/casa-alba-dormitorio-1.jpeg"
-        ],
-        whatsapp: "https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20informaci%C3%B3n%20sobre%20Casa%20Alba%20HYC"
-      },
+  const models = {
+    alba: {
+      type: "Modelo práctico",
+      title: "Casa Alba HYC",
+      description: "Vivienda de un nivel, funcional y clara, pensada para familias que buscan iniciar con una casa cómoda, bien distribuida y con espacios esenciales.",
+      main: "imagenes/casa-alba-fachada.jpeg",
+      specs: ["147 m² construcción", "200 m² lote", "2 habitaciones", "1 baño", "Parqueo 2 vehículos", "Patio y lavandería"],
+      gallery: [
+        "imagenes/casa-alba-fachada.jpeg",
+        "imagenes/casa-alba-sala-comedor.jpeg",
+        "imagenes/casa-alba-dormitorio-1.jpeg"
+      ],
+      whatsapp: "https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20informaci%C3%B3n%20sobre%20Casa%20Alba%20HYC"
+    },
 
-      lia: {
-        type: "Modelo familiar",
-        title: "Casa Lía HYC",
-        description: "Casa de dos niveles pensada para una familia que necesita comodidad, privacidad y una distribución amplia con habitaciones independientes.",
-        main: "imagenes/casa-lia-fachada.jpeg",
-        specs: ["268.33 m² construcción", "Lote 20 x 10 m", "2 niveles", "3 habitaciones", "3.5 baños", "Parqueo 2 vehículos"],
-        gallery: [
-          "imagenes/casa-lia-fachada.jpeg",
-          "imagenes/casa-lia-sala-comedor.jpeg",
-          "imagenes/casa-lia-sala-familiar.jpeg"
-        ],
-        whatsapp: "https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20informaci%C3%B3n%20sobre%20Casa%20L%C3%ADa%20HYC"
-      },
+    lia: {
+      type: "Modelo familiar",
+      title: "Casa Lía HYC",
+      description: "Casa de dos niveles pensada para una familia que necesita comodidad, privacidad y una distribución amplia con habitaciones independientes.",
+      main: "imagenes/casa-lia-fachada.jpeg",
+      specs: ["268.33 m² construcción", "Lote 20 x 10 m", "2 niveles", "3 habitaciones", "3.5 baños", "Parqueo 2 vehículos"],
+      gallery: [
+        "imagenes/casa-lia-fachada.jpeg",
+        "imagenes/casa-lia-sala-comedor.jpeg",
+        "imagenes/casa-lia-sala-familiar.jpeg"
+      ],
+      whatsapp: "https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20informaci%C3%B3n%20sobre%20Casa%20L%C3%ADa%20HYC"
+    },
 
-      nivara: {
-        type: "Modelo premium",
-        title: "Casa Nivara HYC",
-        description: "Residencia de alto nivel con presencia arquitectónica fuerte, área social abierta, terraza, piscina, balcón, sala familiar y doble altura.",
-        main: "imagenes/casa-nivara-fachada-frontal.png",
-        specs: ["537.32 m² construcción", "625 m² lote", "3 habitaciones", "Parqueo 3 vehículos", "Piscina", "Terraza y balcón"],
-        gallery: [
-          "imagenes/casa-nivara-fachada-frontal.png",
-          "imagenes/casa-nivara-fachada-posterior.png",
-          "imagenes/casa-nivara-sala-comedor.png"
-        ],
-        whatsapp: "https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20informaci%C3%B3n%20sobre%20Casa%20Nivara%20HYC"
-      }
-    };
-
-    const tabs = document.querySelectorAll(".model-tab");
-    const mainImage = document.getElementById("modelMainImage");
-    const modelType = document.getElementById("modelType");
-    const modelTitle = document.getElementById("modelTitle");
-    const modelDescription = document.getElementById("modelDescription");
-    const modelSpecs = document.getElementById("modelSpecs");
-    const modelGallery = document.getElementById("modelGallery");
-    const modelWhatsapp = document.getElementById("modelWhatsapp");
-
-    function loadModel(modelKey) {
-      const model = models[modelKey];
-
-      mainImage.src = model.main;
-      modelType.textContent = model.type;
-      modelTitle.textContent = model.title;
-      modelDescription.textContent = model.description;
-      modelWhatsapp.href = model.whatsapp;
-
-      modelSpecs.innerHTML = "";
-      model.specs.forEach(spec => {
-        const span = document.createElement("span");
-        span.textContent = spec;
-        modelSpecs.appendChild(span);
-      });
-
-      modelGallery.innerHTML = "";
-      model.gallery.forEach(imgSrc => {
-        const img = document.createElement("img");
-        img.src = imgSrc;
-        img.alt = model.title;
-        img.addEventListener("click", () => {
-          mainImage.src = imgSrc;
-        });
-        modelGallery.appendChild(img);
-      });
+    nivara: {
+      type: "Modelo premium",
+      title: "Casa Nivara HYC",
+      description: "Residencia de alto nivel con presencia arquitectónica fuerte, área social abierta, terraza, piscina, balcón, sala familiar y doble altura.",
+      main: "imagenes/casa-nivara-fachada-frontal.png",
+      specs: ["537.32 m² construcción", "625 m² lote", "3 habitaciones", "Parqueo 3 vehículos", "Piscina", "Terraza y balcón"],
+      gallery: [
+        "imagenes/casa-nivara-fachada-frontal.png",
+        "imagenes/casa-nivara-fachada-posterior.png",
+        "imagenes/casa-nivara-sala-comedor.png"
+      ],
+      whatsapp: "https://wa.me/50433685015?text=Hola%20HYC,%20quiero%20informaci%C3%B3n%20sobre%20Casa%20Nivara%20HYC"
     }
+  };
 
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        tabs.forEach(item => item.classList.remove("active"));
-        tab.classList.add("active");
-        loadModel(tab.dataset.model);
-      });
+  const tabs = document.querySelectorAll(".model-tab");
+  const mainImage = document.getElementById("modelMainImage");
+  const modelType = document.getElementById("modelType");
+  const modelTitle = document.getElementById("modelTitle");
+  const modelDescription = document.getElementById("modelDescription");
+  const modelSpecs = document.getElementById("modelSpecs");
+  const modelGallery = document.getElementById("modelGallery");
+  const modelWhatsapp = document.getElementById("modelWhatsapp");
+
+  function loadModel(modelKey) {
+    const model = models[modelKey];
+
+    mainImage.src = model.main;
+    mainImage.alt = model.title;
+
+    modelType.textContent = model.type;
+    modelTitle.textContent = model.title;
+    modelDescription.textContent = model.description;
+    modelWhatsapp.href = model.whatsapp;
+
+    modelSpecs.innerHTML = "";
+    model.specs.forEach(spec => {
+      const span = document.createElement("span");
+      span.textContent = spec;
+      modelSpecs.appendChild(span);
     });
-  </script>
+
+    modelGallery.innerHTML = "";
+    model.gallery.forEach(imgSrc => {
+      const img = document.createElement("img");
+      img.src = imgSrc;
+      img.alt = model.title;
+
+      img.addEventListener("click", () => {
+        mainImage.src = imgSrc;
+        mainImage.alt = model.title;
+      });
+
+      modelGallery.appendChild(img);
+    });
+
+    modelGallery.classList.remove("mobile-open");
+  }
+
+  function toggleModelGallery() {
+    modelGallery.classList.toggle("mobile-open");
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(item => item.classList.remove("active"));
+      tab.classList.add("active");
+      loadModel(tab.dataset.model);
+    });
+  });
+
+  loadModel("alba");
+</script>
 
 </body>
 </html>
